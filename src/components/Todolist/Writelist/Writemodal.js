@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Col } from "react-bootstrap";
+import { Col, InputGroup } from "react-bootstrap";
 
 
 
@@ -146,13 +146,15 @@ function Writemodal(props) {
                 }
                 />
               </Form.Group>
-
-              <Button variant="secondary" onClick={props.onHide}>
-                Close
-              </Button>
-              <Button variant="primary" type="submit">
-                Save Changes
-              </Button>
+              <ModalG.ButtonG>
+                <Button variant="secondary" onClick={props.onHide}>
+                  Close
+                </Button>
+                <Button variant="primary" type="submit">
+                  Save Changes
+                </Button>
+              </ModalG.ButtonG>
+              
             </Row>
           </Form>
         </Modal.Body>
@@ -174,8 +176,16 @@ const SubTitle = styled.h6`
   color: rgb(51, 51, 51, .7);
   margin-top: 10px;
 `
+const ButtonG = styled.div`
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  
+  button {margin: 0 4.5px;}
+`
 
 const ModalG = {
   Wrapper,
   SubTitle,
+  ButtonG
 }
